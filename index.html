@@ -13,10 +13,10 @@
             --border-color: #e2e8f0;
             --rdo-bg: #fee2e2;
             --rdo-text: #991b1b;
-            --m-bg: #e0f2fe;
-            --m-text: #0369a1;
-            --e-bg: #fef3c7;
-            --e-text: #b45309;
+            --s1-bg: #e0f2fe;
+            --s1-text: #0369a1;
+            --s2-bg: #fef3c7;
+            --s2-text: #b45309;
         }
 
         * {
@@ -95,8 +95,8 @@
             font-size: 0.8rem;
         }
 
-        .badge-m { background-color: var(--m-bg); color: var(--m-text); }
-        .badge-e { background-color: var(--e-bg); color: var(--e-text); }
+        .badge-s1 { background-color: var(--s1-bg); color: var(--s1-text); }
+        .badge-s2 { background-color: var(--s2-bg); color: var(--s2-text); }
         .badge-rdo { background-color: var(--rdo-bg); color: var(--rdo-text); }
 
         .week-section {
@@ -155,8 +155,8 @@
             width: 120px;
         }
 
-        .cell-M { background-color: var(--m-bg); color: var(--m-text); font-weight: 500; }
-        .cell-E { background-color: var(--e-bg); color: var(--e-text); font-weight: 500; }
+        .cell-S1 { background-color: var(--s1-bg); color: var(--s1-text); font-weight: 500; }
+        .cell-S2 { background-color: var(--s2-bg); color: var(--s2-text); font-weight: 500; }
         .cell-RDO { background-color: var(--rdo-bg); color: var(--rdo-text); font-weight: bold; }
 
         blockquote {
@@ -191,7 +191,7 @@
             }
             
             thead { 
-                display: none; /* Hide header completely on small layouts */
+                display: none; 
             }
             
             tr { 
@@ -253,17 +253,18 @@
             <div class="legend-box">
                 <div class="legend-title">Shift Guide</div>
                 <ul class="legend-items">
-                    <li><span class="badge badge-m">M</span> Morning: 8:00 AM – 5:00 PM</li>
-                    <li><span class="badge badge-e">E</span> Evening: 12:00 PM – 9:00 PM</li>
+                    <li><span class="badge badge-s1">S1</span> Morning: 8:00 AM – 5:00 PM</li>
+                    <li><span class="badge badge-s2">S2</span> Evening: 12:00 PM – 9:00 PM</li>
                     <li><span class="badge badge-rdo">RDO</span> Regular Day Off (2 Days Consecutive)</li>
                 </ul>
             </div>
         </header>
 
+        <!-- WEEK 1 -->
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 1 (June 1 – June 7)</div>
-                <div class="week-note">Initial Setup: Alpesh & Dhruv start on Morning rotation.</div>
+                <div class="week-note">Initial Setup: Alpesh & Dhruv start on S1 rotation.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -282,53 +283,54 @@
                     <tbody>
                         <tr>
                             <td class="person-name">Alpesh</td>
-                            <td class="cell-M" data-label="Mon (1)">M</td>
-                            <td class="cell-M" data-label="Tue (2)">M</td>
-                            <td class="cell-M" data-label="Wed (3)">M</td>
-                            <td class="cell-M" data-label="Thu (4)">M</td>
-                            <td class="cell-M" data-label="Fri (5)">M</td>
+                            <td class="cell-S1" data-label="Mon (1)">S1</td>
+                            <td class="cell-S1" data-label="Tue (2)">S1</td>
+                            <td class="cell-S1" data-label="Wed (3)">S1</td>
+                            <td class="cell-S1" data-label="Thu (4)">S1</td>
+                            <td class="cell-S1" data-label="Fri (5)">S1</td>
                             <td class="cell-RDO" data-label="Sat (6)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (7)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Dhruv</td>
-                            <td class="cell-M" data-label="Mon (1)">M</td>
-                            <td class="cell-M" data-label="Tue (2)">M</td>
-                            <td class="cell-M" data-label="Wed (3)">M</td>
+                            <td class="cell-S1" data-label="Mon (1)">S1</td>
+                            <td class="cell-S1" data-label="Tue (2)">S1</td>
+                            <td class="cell-S1" data-label="Wed (3)">S1</td>
                             <td class="cell-RDO" data-label="Thu (4)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (5)">RDO</td>
-                            <td class="cell-M" data-label="Sat (6)">M</td>
-                            <td class="cell-M" data-label="Sun (7)">M</td>
+                            <td class="cell-S1" data-label="Sat (6)">S1</td>
+                            <td class="cell-S1" data-label="Sun (7)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Varshil</td>
-                            <td class="cell-E" data-label="Mon (1)">E</td>
-                            <td class="cell-E" data-label="Tue (2)">E</td>
-                            <td class="cell-E" data-label="Wed (3)">E</td>
-                            <td class="cell-E" data-label="Thu (4)">E</td>
-                            <td class="cell-E" data-label="Fri (5)">E</td>
+                            <td class="cell-S2" data-label="Mon (1)">S2</td>
+                            <td class="cell-S2" data-label="Tue (2)">S2</td>
+                            <td class="cell-S2" data-label="Wed (3)">S2</td>
+                            <td class="cell-S2" data-label="Thu (4)">S2</td>
+                            <td class="cell-S2" data-label="Fri (5)">S2</td>
                             <td class="cell-RDO" data-label="Sat (6)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (7)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Arpit</td>
-                            <td class="cell-E" data-label="Mon (1)">E</td>
-                            <td class="cell-E" data-label="Tue (2)">E</td>
-                            <td class="cell-E" data-label="Wed (3)">E</td>
+                            <td class="cell-S2" data-label="Mon (1)">S2</td>
+                            <td class="cell-S2" data-label="Tue (2)">S2</td>
+                            <td class="cell-S2" data-label="Wed (3)">S2</td>
                             <td class="cell-RDO" data-label="Thu (4)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (5)">RDO</td>
-                            <td class="cell-E" data-label="Sat (6)">E</td>
-                            <td class="cell-E" data-label="Sun (7)">E</td>
+                            <td class="cell-S2" data-label="Sat (6)">S2</td>
+                            <td class="cell-S2" data-label="Sun (7)">S2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- WEEK 2 -->
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 2 (June 8 – June 14)</div>
-                <div class="week-note">Rotation Swap: Varshil & Arpit take Mornings; Alpesh & Dhruv move to Evening.</div>
+                <div class="week-note">Rotation Swap: Varshil & Arpit take S1; Alpesh & Dhruv move to S2.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -347,53 +349,54 @@
                     <tbody>
                         <tr>
                             <td class="person-name">Varshil</td>
-                            <td class="cell-M" data-label="Mon (8)">M</td>
-                            <td class="cell-M" data-label="Tue (9)">M</td>
-                            <td class="cell-M" data-label="Wed (10)">M</td>
-                            <td class="cell-M" data-label="Thu (11)">M</td>
-                            <td class="cell-M" data-label="Fri (12)">M</td>
+                            <td class="cell-S1" data-label="Mon (8)">S1</td>
+                            <td class="cell-S1" data-label="Tue (9)">S1</td>
+                            <td class="cell-S1" data-label="Wed (10)">S1</td>
+                            <td class="cell-S1" data-label="Thu (11)">S1</td>
+                            <td class="cell-S1" data-label="Fri (12)">S1</td>
                             <td class="cell-RDO" data-label="Sat (13)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (14)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Arpit</td>
-                            <td class="cell-M" data-label="Mon (8)">M</td>
-                            <td class="cell-M" data-label="Tue (9)">M</td>
-                            <td class="cell-M" data-label="Wed (10)">M</td>
+                            <td class="cell-S1" data-label="Mon (8)">S1</td>
+                            <td class="cell-S1" data-label="Tue (9)">S1</td>
+                            <td class="cell-S1" data-label="Wed (10)">S1</td>
                             <td class="cell-RDO" data-label="Thu (11)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (12)">RDO</td>
-                            <td class="cell-M" data-label="Sat (13)">M</td>
-                            <td class="cell-M" data-label="Sun (14)">M</td>
+                            <td class="cell-S1" data-label="Sat (13)">S1</td>
+                            <td class="cell-S1" data-label="Sun (14)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Alpesh</td>
-                            <td class="cell-E" data-label="Mon (8)">E</td>
-                            <td class="cell-E" data-label="Tue (9)">E</td>
-                            <td class="cell-E" data-label="Wed (10)">E</td>
-                            <td class="cell-E" data-label="Thu (11)">E</td>
-                            <td class="cell-E" data-label="Fri (12)">E</td>
+                            <td class="cell-S2" data-label="Mon (8)">S2</td>
+                            <td class="cell-S2" data-label="Tue (9)">S2</td>
+                            <td class="cell-S2" data-label="Wed (10)">S2</td>
+                            <td class="cell-S2" data-label="Thu (11)">S2</td>
+                            <td class="cell-S2" data-label="Fri (12)">S2</td>
                             <td class="cell-RDO" data-label="Sat (13)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (14)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Dhruv</td>
-                            <td class="cell-E" data-label="Mon (8)">E</td>
-                            <td class="cell-E" data-label="Tue (9)">E</td>
-                            <td class="cell-E" data-label="Wed (10)">E</td>
+                            <td class="cell-S2" data-label="Mon (8)">S2</td>
+                            <td class="cell-S2" data-label="Tue (9)">S2</td>
+                            <td class="cell-S2" data-label="Wed (10)">S2</td>
                             <td class="cell-RDO" data-label="Thu (11)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (12)">RDO</td>
-                            <td class="cell-E" data-label="Sat (13)">E</td>
-                            <td class="cell-E" data-label="Sun (14)">E</td>
+                            <td class="cell-S2" data-label="Sat (13)">S2</td>
+                            <td class="cell-S2" data-label="Sun (14)">S2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- WEEK 3 -->
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 3 (June 15 – June 21)</div>
-                <div class="week-note">Rotation Swap: Alpesh & Dhruv move back to Morning.</div>
+                <div class="week-note">Rotation Swap: Alpesh & Dhruv move back to S1.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -412,53 +415,54 @@
                     <tbody>
                         <tr>
                             <td class="person-name">Alpesh</td>
-                            <td class="cell-M" data-label="Mon (15)">M</td>
-                            <td class="cell-M" data-label="Tue (16)">M</td>
-                            <td class="cell-M" data-label="Wed (17)">M</td>
-                            <td class="cell-M" data-label="Thu (18)">M</td>
-                            <td class="cell-M" data-label="Fri (19)">M</td>
+                            <td class="cell-S1" data-label="Mon (15)">S1</td>
+                            <td class="cell-S1" data-label="Tue (16)">S1</td>
+                            <td class="cell-S1" data-label="Wed (17)">S1</td>
+                            <td class="cell-S1" data-label="Thu (18)">S1</td>
+                            <td class="cell-S1" data-label="Fri (19)">S1</td>
                             <td class="cell-RDO" data-label="Sat (20)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (21)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Dhruv</td>
-                            <td class="cell-M" data-label="Mon (15)">M</td>
-                            <td class="cell-M" data-label="Tue (16)">M</td>
-                            <td class="cell-M" data-label="Wed (17)">M</td>
+                            <td class="cell-S1" data-label="Mon (15)">S1</td>
+                            <td class="cell-S1" data-label="Tue (16)">S1</td>
+                            <td class="cell-S1" data-label="Wed (17)">S1</td>
                             <td class="cell-RDO" data-label="Thu (18)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (19)">RDO</td>
-                            <td class="cell-M" data-label="Sat (20)">M</td>
-                            <td class="cell-M" data-label="Sun (21)">M</td>
+                            <td class="cell-S1" data-label="Sat (20)">S1</td>
+                            <td class="cell-S1" data-label="Sun (21)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Varshil</td>
-                            <td class="cell-E" data-label="Mon (15)">E</td>
-                            <td class="cell-E" data-label="Tue (16)">E</td>
-                            <td class="cell-E" data-label="Wed (17)">E</td>
-                            <td class="cell-E" data-label="Thu (18)">E</td>
-                            <td class="cell-E" data-label="Fri (19)">E</td>
+                            <td class="cell-S2" data-label="Mon (15)">S2</td>
+                            <td class="cell-S2" data-label="Tue (16)">S2</td>
+                            <td class="cell-S2" data-label="Wed (17)">S2</td>
+                            <td class="cell-S2" data-label="Thu (18)">S2</td>
+                            <td class="cell-S2" data-label="Fri (19)">S2</td>
                             <td class="cell-RDO" data-label="Sat (20)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (21)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Arpit</td>
-                            <td class="cell-E" data-label="Mon (15)">E</td>
-                            <td class="cell-E" data-label="Tue (16)">E</td>
-                            <td class="cell-E" data-label="Wed (17)">E</td>
+                            <td class="cell-S2" data-label="Mon (15)">S2</td>
+                            <td class="cell-S2" data-label="Tue (16)">S2</td>
+                            <td class="cell-S2" data-label="Wed (17)">S2</td>
                             <td class="cell-RDO" data-label="Thu (18)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (19)">RDO</td>
-                            <td class="cell-E" data-label="Sat (20)">E</td>
-                            <td class="cell-E" data-label="Sun (21)">E</td>
+                            <td class="cell-S2" data-label="Sat (20)">S2</td>
+                            <td class="cell-S2" data-label="Sun (21)">S2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- WEEK 4 -->
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 4 (June 22 – June 28)</div>
-                <div class="week-note">Rotation Swap: Varshil & Arpit return to Morning.</div>
+                <div class="week-note">Rotation Swap: Varshil & Arpit return to S1.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -477,49 +481,50 @@
                     <tbody>
                         <tr>
                             <td class="person-name">Varshil</td>
-                            <td class="cell-M" data-label="Mon (22)">M</td>
-                            <td class="cell-M" data-label="Tue (23)">M</td>
-                            <td class="cell-M" data-label="Wed (24)">M</td>
-                            <td class="cell-M" data-label="Thu (25)">M</td>
-                            <td class="cell-M" data-label="Fri (26)">M</td>
+                            <td class="cell-S1" data-label="Mon (22)">S1</td>
+                            <td class="cell-S1" data-label="Tue (23)">S1</td>
+                            <td class="cell-S1" data-label="Wed (24)">S1</td>
+                            <td class="cell-S1" data-label="Thu (25)">S1</td>
+                            <td class="cell-S1" data-label="Fri (26)">S1</td>
                             <td class="cell-RDO" data-label="Sat (27)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (28)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Arpit</td>
-                            <td class="cell-M" data-label="Mon (22)">M</td>
-                            <td class="cell-M" data-label="Tue (23)">M</td>
-                            <td class="cell-M" data-label="Wed (24)">M</td>
+                            <td class="cell-S1" data-label="Mon (22)">S1</td>
+                            <td class="cell-S1" data-label="Tue (23)">S1</td>
+                            <td class="cell-S1" data-label="Wed (24)">S1</td>
                             <td class="cell-RDO" data-label="Thu (25)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (26)">RDO</td>
-                            <td class="cell-M" data-label="Sat (27)">M</td>
-                            <td class="cell-M" data-label="Sun (28)">M</td>
+                            <td class="cell-S1" data-label="Sat (27)">S1</td>
+                            <td class="cell-S1" data-label="Sun (28)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Alpesh</td>
-                            <td class="cell-E" data-label="Mon (22)">E</td>
-                            <td class="cell-E" data-label="Tue (23)">E</td>
-                            <td class="cell-E" data-label="Wed (24)">E</td>
-                            <td class="cell-E" data-label="Thu (25)">E</td>
-                            <td class="cell-E" data-label="Fri (26)">E</td>
+                            <td class="cell-S2" data-label="Mon (22)">S2</td>
+                            <td class="cell-S2" data-label="Tue (23)">S2</td>
+                            <td class="cell-S2" data-label="Wed (24)">S2</td>
+                            <td class="cell-S2" data-label="Thu (25)">S2</td>
+                            <td class="cell-S2" data-label="Fri (26)">S2</td>
                             <td class="cell-RDO" data-label="Sat (27)">RDO</td>
                             <td class="cell-RDO" data-label="Sun (28)">RDO</td>
                         </tr>
                         <tr>
                             <td class="person-name">Dhruv</td>
-                            <td class="cell-E" data-label="Mon (22)">E</td>
-                            <td class="cell-E" data-label="Tue (23)">E</td>
-                            <td class="cell-E" data-label="Wed (24)">E</td>
+                            <td class="cell-S2" data-label="Mon (22)">S2</td>
+                            <td class="cell-S2" data-label="Tue (23)">S2</td>
+                            <td class="cell-S2" data-label="Wed (24)">S2</td>
                             <td class="cell-RDO" data-label="Thu (25)">RDO</td>
                             <td class="cell-RDO" data-label="Fri (26)">RDO</td>
-                            <td class="cell-E" data-label="Sat (27)">E</td>
-                            <td class="cell-E" data-label="Sun (28)">E</td>
+                            <td class="cell-S2" data-label="Sat (27)">S2</td>
+                            <td class="cell-S2" data-label="Sun (28)">S2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- WEEK 5 -->
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 5 (June 29 – June 30)</div>
@@ -537,32 +542,37 @@
                     <tbody>
                         <tr>
                             <td class="person-name">Alpesh</td>
-                            <td class="cell-M" data-label="Mon (29)">M</td>
-                            <td class="cell-M" data-label="Tue (30)">M</td>
+                            <td class="cell-S1" data-label="Mon (29)">S1</td>
+                            <td class="cell-S1" data-label="Tue (30)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Dhruv</td>
-                            <td class="cell-M" data-label="Mon (29)">M</td>
-                            <td class="cell-M" data-label="Tue (30)">M</td>
+                            <td class="cell-S1" data-label="Mon (29)">S1</td>
+                            <td class="cell-S1" data-label="Tue (30)">S1</td>
                         </tr>
                         <tr>
                             <td class="person-name">Varshil</td>
-                            <td class="cell-E" data-label="Mon (29)">E</td>
-                            <td class="cell-E" data-label="Tue (30)">E</td>
+                            <td class="cell-S2" data-label="Mon (29)">S2</td>
+                            <td class="cell-S2" data-label="Tue (30)">S2</td>
                         </tr>
                         <tr>
                             <td class="person-name">Arpit</td>
-                            <td class="cell-E" data-label="Mon (29)">E</td>
-                            <td class="cell-E" data-label="Tue (30)">E</td>
+                            <td class="cell-S2" data-label="Mon (29)">S2</td>
+                            <td class="cell-S2" data-label="Tue (30)">S2</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <blockquote>
-            <strong>Why this works:</strong> Everyone works exactly 5 days a week, your shifts swap cleanly every Monday morning, and by staggering the RDO pairs (one pair off Thu/Fri, the other off Sat/Sun), your operation keeps running 7 days a week without a single day going dark.
-        </blockquote>
+        blockquote {
+            background: #f0f7ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 2rem 0 0 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
     </div>
 
 </body>
