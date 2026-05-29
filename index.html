@@ -29,14 +29,17 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #fff;
+            background-color: #f1f5f9;
             padding: 1rem;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         header {
@@ -109,6 +112,7 @@
 
         .week-title {
             font-size: 1.25rem;
+            font-weight: bold;
         }
 
         .week-note {
@@ -117,43 +121,40 @@
             margin-top: 0.25rem;
         }
 
-        /* Responsive Table Design */
         .table-responsive {
             width: 100%;
-            overflow-x: auto;
             border: 1px solid var(--border-color);
             border-top: none;
             border-radius: 0 0 6px 6px;
+            background: white;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: center;
-            background: white;
-            min-width: 700px; /* Ensures readable spacing on desktop wrap */
         }
 
         th, td {
-            padding: 0.75rem;
+            padding: 0.75rem 0.5rem;
             border: 1px solid var(--border-color);
+            font-size: 0.95rem;
         }
 
         th {
             background-color: var(--bg-light);
             color: var(--primary-color);
             font-weight: 600;
-            font-size: 0.9rem;
         }
 
         td.person-name {
             font-weight: bold;
             text-align: left;
             background-color: var(--bg-light);
+            padding-left: 1rem;
             width: 120px;
         }
 
-        /* Context cell styling mapping */
         .cell-M { background-color: var(--m-bg); color: var(--m-text); font-weight: 500; }
         .cell-E { background-color: var(--e-bg); color: var(--e-text); font-weight: 500; }
         .cell-RDO { background-color: var(--rdo-bg); color: var(--rdo-text); font-weight: bold; }
@@ -162,69 +163,78 @@
             background: #f0f7ff;
             border-left: 4px solid var(--secondary-color);
             padding: 1rem;
-            margin: 2rem 0;
+            margin: 2rem 0 0 0;
             border-radius: 0 8px 8px 0;
             font-size: 0.95rem;
         }
 
-        /* Mobile specific view setup (Turns table into stacked cards) */
-        @media screen and (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            
-            .table-responsive {
-                border: none;
+        /* Mobile View Configurations UI Overhaul */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0.5rem;
             }
 
-            table, tragedies, thead, tbody, th, td, tr { 
+            .container {
+                padding: 1rem;
+            }
+
+            h1 { font-size: 1.5rem; }
+
+            .table-responsive {
+                border: none;
+                background: transparent;
+            }
+
+            table, tbody, tr, td { 
                 display: block; 
+                width: 100% !important;
             }
             
-            thead tr { 
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
+            thead { 
+                display: none; /* Hide header completely on small layouts */
             }
             
             tr { 
                 border: 1px solid var(--border-color);
-                border-radius: 6px;
-                margin-bottom: 1rem;
+                border-radius: 8px;
+                margin-bottom: 1.25rem;
                 background: white;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+                overflow: hidden;
             }
             
             td { 
                 border: none;
                 border-bottom: 1px solid #f1f5f9; 
                 position: relative;
-                padding-left: 50%; 
+                padding: 0.75rem 1rem 0.75rem 45%; 
                 text-align: right;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
+            }
+
+            td:last-child {
+                border-bottom: none;
             }
 
             td.person-name {
-                width: 100%;
                 text-align: center;
-                background-color: var(--primary-color);
-                color: white;
-                padding-left: 10px;
-                border-radius: 5px 5px 0 0;
+                background-color: var(--primary-color) !important;
+                color: white !important;
+                padding: 0.5rem 1rem;
+                font-size: 1.05rem;
             }
             
             td:not(.person-name):before { 
                 position: absolute;
                 left: 12px;
-                width: 45%; 
-                padding-right: 10px; 
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40%; 
                 white-space: nowrap;
                 text-align: left;
                 font-weight: 600;
                 color: #64748b;
                 content: attr(data-label);
-            }
-
-            td.cell-M, td.cell-E, td.cell-RDO {
-                font-weight: bold;
             }
         }
     </style>
@@ -291,7 +301,7 @@
                             <td class="cell-M" data-label="Sun (7)">M</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Arpit</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-E" data-label="Mon (1)">E</td>
                             <td class="cell-E" data-label="Tue (2)">E</td>
                             <td class="cell-E" data-label="Wed (3)">E</td>
@@ -301,7 +311,7 @@
                             <td class="cell-RDO" data-label="Sun (7)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Arpit</td>
                             <td class="cell-E" data-label="Mon (1)">E</td>
                             <td class="cell-E" data-label="Tue (2)">E</td>
                             <td class="cell-E" data-label="Wed (3)">E</td>
@@ -318,7 +328,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 2 (June 8 – June 14)</div>
-                <div class="week-note">Rotation Swap: Arpit & Varshil take Mornings; Alpesh & Dhruv move to Evening.</div>
+                <div class="week-note">Rotation Swap: Varshil & Arpit take Mornings; Alpesh & Dhruv move to Evening.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -336,7 +346,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="person-name">Arpit</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-M" data-label="Mon (8)">M</td>
                             <td class="cell-M" data-label="Tue (9)">M</td>
                             <td class="cell-M" data-label="Wed (10)">M</td>
@@ -346,7 +356,7 @@
                             <td class="cell-RDO" data-label="Sun (14)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Arpit</td>
                             <td class="cell-M" data-label="Mon (8)">M</td>
                             <td class="cell-M" data-label="Tue (9)">M</td>
                             <td class="cell-M" data-label="Wed (10)">M</td>
@@ -421,7 +431,7 @@
                             <td class="cell-M" data-label="Sun (21)">M</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Arpit</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-E" data-label="Mon (15)">E</td>
                             <td class="cell-E" data-label="Tue (16)">E</td>
                             <td class="cell-E" data-label="Wed (17)">E</td>
@@ -431,7 +441,7 @@
                             <td class="cell-RDO" data-label="Sun (21)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Arpit</td>
                             <td class="cell-E" data-label="Mon (15)">E</td>
                             <td class="cell-E" data-label="Tue (16)">E</td>
                             <td class="cell-E" data-label="Wed (17)">E</td>
@@ -448,7 +458,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 4 (June 22 – June 28)</div>
-                <div class="week-note">Rotation Swap: Arpit & Varshil return to Morning.</div>
+                <div class="week-note">Rotation Swap: Varshil & Arpit return to Morning.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -466,7 +476,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="person-name">Arpit</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-M" data-label="Mon (22)">M</td>
                             <td class="cell-M" data-label="Tue (23)">M</td>
                             <td class="cell-M" data-label="Wed (24)">M</td>
@@ -476,7 +486,7 @@
                             <td class="cell-RDO" data-label="Sun (28)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Arpit</td>
                             <td class="cell-M" data-label="Mon (22)">M</td>
                             <td class="cell-M" data-label="Tue (23)">M</td>
                             <td class="cell-M" data-label="Wed (24)">M</td>
@@ -536,12 +546,12 @@
                             <td class="cell-M" data-label="Tue (30)">M</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Arpit</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-E" data-label="Mon (29)">E</td>
                             <td class="cell-E" data-label="Tue (30)">E</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Arpit</td>
                             <td class="cell-E" data-label="Mon (29)">E</td>
                             <td class="cell-E" data-label="Tue (30)">E</td>
                         </tr>
