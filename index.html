@@ -17,6 +17,8 @@
             --s1-text: #0369a1;
             --s2-bg: #fef3c7;
             --s2-text: #b45309;
+            --btn-excel: #107c41;
+            --btn-pdf: #e02424;
         }
 
         * {
@@ -48,13 +50,48 @@
             padding-bottom: 1rem;
         }
 
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
         h1 {
             color: var(--primary-color);
             font-size: 2rem;
-            margin-bottom: 0.5rem;
         }
 
+        .export-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+        }
+
+        .btn-excel { background-color: var(--btn-excel); }
+        .btn-pdf { background-color: var(--btn-pdf); }
+
         .intro-text p {
+            margin-top: 1rem;
             margin-bottom: 1rem;
             font-size: 1rem;
             color: #4a5568;
@@ -168,32 +205,22 @@
             font-size: 0.95rem;
         }
 
-        /* Mobile View Configurations UI Overhaul */
+        /* Print Specific Styling Optimization */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .export-actions, .intro-text { display: none; }
+            .week-section { page-break-inside: avoid; }
+        }
+
+        /* Mobile Layout Stack Rules */
         @media screen and (max-width: 768px) {
-            body {
-                padding: 0.5rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
+            body { padding: 0.5rem; }
+            .container { padding: 1rem; }
             h1 { font-size: 1.5rem; }
-
-            .table-responsive {
-                border: none;
-                background: transparent;
-            }
-
-            table, tbody, tr, td { 
-                display: block; 
-                width: 100% !important;
-            }
-            
-            thead { 
-                display: none; 
-            }
-            
+            .table-responsive { border: none; background: transparent; }
+            table, tbody, tr, td { display: block; width: 100% !important; }
+            thead { display: none; }
             tr { 
                 border: 1px solid var(--border-color);
                 border-radius: 8px;
@@ -202,7 +229,6 @@
                 box-shadow: 0 2px 4px rgba(0,0,0,0.04);
                 overflow: hidden;
             }
-            
             td { 
                 border: none;
                 border-bottom: 1px solid #f1f5f9; 
@@ -211,11 +237,7 @@
                 text-align: right;
                 font-size: 0.9rem;
             }
-
-            td:last-child {
-                border-bottom: none;
-            }
-
+            td:last-child { border-bottom: none; }
             td.person-name {
                 text-align: center;
                 background-color: var(--primary-color) !important;
@@ -223,7 +245,6 @@
                 padding: 0.5rem 1rem;
                 font-size: 1.05rem;
             }
-            
             td:not(.person-name):before { 
                 position: absolute;
                 left: 12px;
@@ -241,13 +262,17 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="rosterContainer">
         <header>
-            <h1>June 2026 Shift Roster</h1>
+            <div class="header-top">
+                <h1>June 2026 Shift Roster</h1>
+                <div class="export-actions">
+                    <button class="btn-action btn-excel" onclick="exportToExcel()">📊 Download Excel</button>
+                    <button class="btn-action btn-pdf" onclick="exportToPDF()">📄 Download PDF</button>
+                </div>
+            </div>
             <div class="intro-text">
-                <p>Designing a 100% running coverage roster for 4 people with a 5-day work week, sequential rolling regular days off (RDOs), and a minimum of 2 people per shift every single day is mathematically impossible.</p>
-                <p>You have 14 shifts to fill every week (2 shifts a day × 7 days). Four people working 5 days each gives you only <strong>20 total man-days</strong> available. If you put 2 people on <em>every</em> shift, you would need <strong>28 man-days</strong>.</p>
-                <p>To keep the schedule active every single day safely, the standard practice is followed below ensuring <strong>at least 1 person covers each shift</strong>, keeping daily coverage up across both time frames seamlessly.</p>
+                <p>Designing a 100% running coverage roster for 4 people with a 5-day work week, sequential rolling regular days off (RDOs), and a minimum of 2 people per shift every single day is mathematically impossible. This optimized layout guarantees core operation coverage securely across all dates.</p>
             </div>
 
             <div class="legend-box">
@@ -264,7 +289,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 1 (June 1 – June 7)</div>
-                <div class="week-note">Initial Setup: Alpesh & Dhruv start on S1 rotation.</div>
+                <div class="week-note">Initial Setup: Alpesh & Varshil start on S1 rotation.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -292,7 +317,7 @@
                             <td class="cell-RDO" data-label="Sun (7)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Dhruv</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-S1" data-label="Mon (1)">S1</td>
                             <td class="cell-S1" data-label="Tue (2)">S1</td>
                             <td class="cell-S1" data-label="Wed (3)">S1</td>
@@ -302,7 +327,7 @@
                             <td class="cell-S1" data-label="Sun (7)">S1</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Dhruv</td>
                             <td class="cell-S2" data-label="Mon (1)">S2</td>
                             <td class="cell-S2" data-label="Tue (2)">S2</td>
                             <td class="cell-S2" data-label="Wed (3)">S2</td>
@@ -330,7 +355,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 2 (June 8 – June 14)</div>
-                <div class="week-note">Rotation Swap: Varshil & Arpit take S1; Alpesh & Dhruv move to S2.</div>
+                <div class="week-note">Rotation Swap: Dhruv & Arpit take S1; Alpesh & Varshil move to S2.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -348,7 +373,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Dhruv</td>
                             <td class="cell-S1" data-label="Mon (8)">S1</td>
                             <td class="cell-S1" data-label="Tue (9)">S1</td>
                             <td class="cell-S1" data-label="Wed (10)">S1</td>
@@ -378,7 +403,7 @@
                             <td class="cell-RDO" data-label="Sun (14)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Dhruv</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-S2" data-label="Mon (8)">S2</td>
                             <td class="cell-S2" data-label="Tue (9)">S2</td>
                             <td class="cell-S2" data-label="Wed (10)">S2</td>
@@ -396,7 +421,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 3 (June 15 – June 21)</div>
-                <div class="week-note">Rotation Swap: Alpesh & Dhruv move back to S1.</div>
+                <div class="week-note">Rotation Swap: Alpesh & Varshil move back to S1.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -424,7 +449,7 @@
                             <td class="cell-RDO" data-label="Sun (21)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Dhruv</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-S1" data-label="Mon (15)">S1</td>
                             <td class="cell-S1" data-label="Tue (16)">S1</td>
                             <td class="cell-S1" data-label="Wed (17)">S1</td>
@@ -434,7 +459,7 @@
                             <td class="cell-S1" data-label="Sun (21)">S1</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Dhruv</td>
                             <td class="cell-S2" data-label="Mon (15)">S2</td>
                             <td class="cell-S2" data-label="Tue (16)">S2</td>
                             <td class="cell-S2" data-label="Wed (17)">S2</td>
@@ -462,7 +487,7 @@
         <section class="week-section">
             <div class="week-header">
                 <div class="week-title">Week 4 (June 22 – June 28)</div>
-                <div class="week-note">Rotation Swap: Varshil & Arpit return to S1.</div>
+                <div class="week-note">Rotation Swap: Dhruv & Arpit return to S1.</div>
             </div>
             <div class="table-responsive">
                 <table>
@@ -480,7 +505,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Dhruv</td>
                             <td class="cell-S1" data-label="Mon (22)">S1</td>
                             <td class="cell-S1" data-label="Tue (23)">S1</td>
                             <td class="cell-S1" data-label="Wed (24)">S1</td>
@@ -510,7 +535,7 @@
                             <td class="cell-RDO" data-label="Sun (28)">RDO</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Dhruv</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-S2" data-label="Mon (22)">S2</td>
                             <td class="cell-S2" data-label="Tue (23)">S2</td>
                             <td class="cell-S2" data-label="Wed (24)">S2</td>
@@ -546,12 +571,12 @@
                             <td class="cell-S1" data-label="Tue (30)">S1</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Dhruv</td>
+                            <td class="person-name">Varshil</td>
                             <td class="cell-S1" data-label="Mon (29)">S1</td>
                             <td class="cell-S1" data-label="Tue (30)">S1</td>
                         </tr>
                         <tr>
-                            <td class="person-name">Varshil</td>
+                            <td class="person-name">Dhruv</td>
                             <td class="cell-S2" data-label="Mon (29)">S2</td>
                             <td class="cell-S2" data-label="Tue (30)">S2</td>
                         </tr>
@@ -565,15 +590,52 @@
             </div>
         </section>
 
-        blockquote {
-            background: #f0f7ff;
-            border-left: 4px solid var(--secondary-color);
-            padding: 1rem;
-            margin: 2rem 0 0 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-        }
+        <blockquote>
+            <strong>Why this works:</strong> Everyone works exactly 5 days a week, your shifts swap cleanly every Monday morning, and by staggering the RDO pairs (one pair off Thu/Fri, the other off Sat/Sun), your operation keeps running 7 days a week without a single day going dark.
+        </blockquote>
     </div>
 
+    <!-- Export Logic Scripts -->
+    <script>
+        function exportToExcel() {
+            let csv = 'Roster Week,Person,Mon,Tue,Wed,Thu,Fri,Sat,Sun\n';
+            
+            const sections = document.querySelectorAll('.week-section');
+            sections.forEach(section => {
+                const weekTitle = section.querySelector('.week-title').innerText.replace(/,/g, '');
+                const rows = section.querySelectorAll('tbody tr');
+                
+                rows.forEach(row => {
+                    const name = row.querySelector('.person-name').innerText;
+                    const cells = row.querySelectorAll('td:not(.person-name)');
+                    let rowData = [weekTitle, name];
+                    
+                    cells.forEach(cell => {
+                        rowData.push(cell.innerText);
+                    });
+                    
+                    while(rowData.length < 9) {
+                        rowData.push('');
+                    }
+                    
+                    csv += rowData.join(',') + '\n';
+                });
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "June_2026_Shift_Roster.csv");
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function exportToPDF() {
+            window.print();
+        }
+    </script>
 </body>
 </html>
