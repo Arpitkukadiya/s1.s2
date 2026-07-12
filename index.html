@@ -1,641 +1,283 @@
+ion phase from 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>June 2026 Shift Roster.............</title>
+    <title>ISG Support L1 Roster - July & August 2026</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #2980b9;
-            --text-color: #333333;
-            --bg-light: #f8f9fa;
-            --border-color: #e2e8f0;
-            --rdo-bg: #fee2e2;
-            --rdo-text: #991b1b;
-            --s1-bg: #e0f2fe;
-            --s1-text: #0369a1;
-            --s2-bg: #fef3c7;
-            --s2-text: #b45309;
-            --btn-excel: #107c41;
-            --btn-pdf: #e02424;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f1f5f9;
-            padding: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
-
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            background: #fff;
-            padding: 2rem;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
-        header {
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 1rem;
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
         }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 2rem;
-        }
-
-        .export-actions {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-            text-decoration: none;
-        }
-
-        .btn-action:hover {
-            opacity: 0.9;
-        }
-
-        .btn-excel { background-color: var(--btn-excel); }
-        .btn-pdf { background-color: var(--btn-pdf); }
-
-        .intro-text p {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: #4a5568;
-        }
-
-        .legend-box {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .legend-title {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .legend-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            list-style: none;
-        }
-
-        .legend-items li {
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .badge {
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        .badge-s1 { background-color: var(--s1-bg); color: var(--s1-text); }
-        .badge-s2 { background-color: var(--s2-bg); color: var(--s2-text); }
-        .badge-rdo { background-color: var(--rdo-bg); color: var(--rdo-text); }
-
-        .week-section {
-            margin-bottom: 3rem;
-        }
-
-        .week-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1rem;
-            border-radius: 6px 6px 0 0;
-        }
-
-        .week-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
-
-        .week-note {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-top: 0.25rem;
-        }
-
         .table-responsive {
-            width: 100%;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            border-radius: 0 0 6px 6px;
-            background: white;
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: center;
+            font-size: 13px;
         }
-
         th, td {
-            padding: 0.75rem 0.5rem;
-            border: 1px solid var(--border-color);
-            font-size: 0.95rem;
+            padding: 10px 8px;
+            border: 1px solid #e0e0e0;
         }
-
         th {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
+            background-color: #f8f9fa;
+            color: #495057;
             font-weight: 600;
         }
-
-        td.person-name {
+        .name-col {
             font-weight: bold;
             text-align: left;
-            background-color: var(--bg-light);
-            padding-left: 1rem;
-            width: 120px;
+            background-color: #f8f9fa;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+            min-width: 100px;
+        }
+        /* Shift Codes Styles matching the image original color palette scheme */
+        .shift-s { background-color: #fbe5d6; color: #000; font-weight: 500; }
+        .shift-s1 { background-color: #fce4d6; color: #c65911; font-weight: 600; }
+        .shift-s2 { background-color: #fff2cc; color: #7f6000; font-weight: 600; }
+        .shift-s3 { background-color: #e2efda; color: #375623; font-weight: 600; }
+        .shift-rdo { background-color: #00b0f0; color: #fff; font-weight: 600; }
+        
+        /* Weekend columns styling */
+        .weekend-hdr {
+            background-color: #eaeaea;
         }
 
-        .cell-S1 { background-color: var(--s1-bg); color: var(--s1-text); font-weight: 500; }
-        .cell-S2 { background-color: var(--s2-bg); color: var(--s2-text); font-weight: 500; }
-        .cell-RDO { background-color: var(--rdo-bg); color: var(--rdo-text); font-weight: bold; }
-
-        blockquote {
-            background: #f0f7ff;
-            border-left: 4px solid var(--secondary-color);
-            padding: 1rem;
-            margin: 2rem 0 0 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
         }
-
-        /* Print Specific Styling Optimization */
-        @media print {
-            body { background: white; padding: 0; }
-            .container { box-shadow: none; padding: 0; }
-            .export-actions, .intro-text { display: none; }
-            .week-section { page-break-inside: avoid; }
+        .legend-card {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
         }
-
-        /* Mobile Layout Stack Rules */
-        @media screen and (max-width: 768px) {
-            body { padding: 0.5rem; }
-            .container { padding: 1rem; }
-            h1 { font-size: 1.5rem; }
-            .table-responsive { border: none; background: transparent; }
-            table, tbody, tr, td { display: block; width: 100% !important; }
-            thead { display: none; }
-            tr { 
-                border: 1px solid var(--border-color);
-                border-radius: 8px;
-                margin-bottom: 1.25rem;
-                background: white;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-                overflow: hidden;
-            }
-            td { 
-                border: none;
-                border-bottom: 1px solid #f1f5f9; 
-                position: relative;
-                padding: 0.75rem 1rem 0.75rem 45%; 
-                text-align: right;
-                font-size: 0.9rem;
-            }
-            td:last-child { border-bottom: none; }
-            td.person-name {
-                text-align: center;
-                background-color: var(--primary-color) !important;
-                color: white !important;
-                padding: 0.5rem 1rem;
-                font-size: 1.05rem;
-            }
-            td:not(.person-name):before { 
-                position: absolute;
-                left: 12px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 40%; 
-                white-space: nowrap;
-                text-align: left;
-                font-weight: 600;
-                color: #64748b;
-                content: attr(data-label);
-            }
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        .legend-box {
+            width: 40px;
+            height: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
 
-    <div class="container" id="rosterContainer">
-        <header>
-            <div class="header-top">
-                <h1>June 2026 Shift Roster</h1>
-                <div class="export-actions">
-                    <button class="btn-action btn-excel" onclick="exportToExcel()">📊 Download Excel</button>
-                    <button class="btn-action btn-pdf" onclick="exportToPDF()">📄 Download PDF</button>
-                </div>
-            </div>
-            <div class="intro-text">
-                <p>Designing a 100% running coverage roster for 4 people with a 5-day work week, sequential rolling regular days off (RDOs), and a minimum of 2 people per shift every single day is mathematically impossible. This optimized layout guarantees core operation coverage securely across all dates.</p>
-            </div>
-
-            <div class="legend-box">
-                <div class="legend-title">Shift Guide</div>
-                <ul class="legend-items">
-                    <li><span class="badge badge-s1">S1</span> Morning: 8:00 AM – 5:00 PM</li>
-                    <li><span class="badge badge-s2">S2</span> Evening: 12:00 PM – 9:00 PM</li>
-                    <li><span class="badge badge-rdo">RDO</span> Regular Day Off (2 Days Consecutive)</li>
-                </ul>
-            </div>
-        </header>
-
-        <!-- WEEK 1 -->
-        <section class="week-section">
-            <div class="week-header">
-                <div class="week-title">Week 1 (June 1 – June 7)</div>
-                <div class="week-note">Initial Setup: Alpesh & Varshil start on S1 rotation.</div>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <th>Mon (1)</th>
-                            <th>Tue (2)</th>
-                            <th>Wed (3)</th>
-                            <th>Thu (4)</th>
-                            <th>Fri (5)</th>
-                            <th>Sat (6)</th>
-                            <th>Sun (7)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="person-name">Alpesh</td>
-                            <td class="cell-S1" data-label="Mon (1)">S1</td>
-                            <td class="cell-S1" data-label="Tue (2)">S1</td>
-                            <td class="cell-S1" data-label="Wed (3)">S1</td>
-                            <td class="cell-S1" data-label="Thu (4)">S1</td>
-                            <td class="cell-S1" data-label="Fri (5)">S1</td>
-                            <td class="cell-RDO" data-label="Sat (6)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (7)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Varshil</td>
-                            <td class="cell-S1" data-label="Mon (1)">S1</td>
-                            <td class="cell-S1" data-label="Tue (2)">S1</td>
-                            <td class="cell-S1" data-label="Wed (3)">S1</td>
-                            <td class="cell-RDO" data-label="Thu (4)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (5)">RDO</td>
-                            <td class="cell-S1" data-label="Sat (6)">S1</td>
-                            <td class="cell-S1" data-label="Sun (7)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Dhruv</td>
-                            <td class="cell-S2" data-label="Mon (1)">S2</td>
-                            <td class="cell-S2" data-label="Tue (2)">S2</td>
-                            <td class="cell-S2" data-label="Wed (3)">S2</td>
-                            <td class="cell-S2" data-label="Thu (4)">S2</td>
-                            <td class="cell-S2" data-label="Fri (5)">S2</td>
-                            <td class="cell-RDO" data-label="Sat (6)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (7)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Arpit</td>
-                            <td class="cell-S2" data-label="Mon (1)">S2</td>
-                            <td class="cell-S2" data-label="Tue (2)">S2</td>
-                            <td class="cell-S2" data-label="Wed (3)">S2</td>
-                            <td class="cell-RDO" data-label="Thu (4)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (5)">RDO</td>
-                            <td class="cell-S2" data-label="Sat (6)">S2</td>
-                            <td class="cell-S2" data-label="Sun (7)">S2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- WEEK 2 -->
-        <section class="week-section">
-            <div class="week-header">
-                <div class="week-title">Week 2 (June 8 – June 14)</div>
-                <div class="week-note">Rotation Swap: Dhruv & Arpit take S1; Alpesh & Varshil move to S2.</div>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <th>Mon (8)</th>
-                            <th>Tue (9)</th>
-                            <th>Wed (10)</th>
-                            <th>Thu (11)</th>
-                            <th>Fri (12)</th>
-                            <th>Sat (13)</th>
-                            <th>Sun (14)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="person-name">Dhruv</td>
-                            <td class="cell-S1" data-label="Mon (8)">S1</td>
-                            <td class="cell-S1" data-label="Tue (9)">S1</td>
-                            <td class="cell-S1" data-label="Wed (10)">S1</td>
-                            <td class="cell-S1" data-label="Thu (11)">S1</td>
-                            <td class="cell-S1" data-label="Fri (12)">S1</td>
-                            <td class="cell-RDO" data-label="Sat (13)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (14)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Arpit</td>
-                            <td class="cell-S1" data-label="Mon (8)">S1</td>
-                            <td class="cell-S1" data-label="Tue (9)">S1</td>
-                            <td class="cell-S1" data-label="Wed (10)">S1</td>
-                            <td class="cell-RDO" data-label="Thu (11)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (12)">RDO</td>
-                            <td class="cell-S1" data-label="Sat (13)">S1</td>
-                            <td class="cell-S1" data-label="Sun (14)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Alpesh</td>
-                            <td class="cell-S2" data-label="Mon (8)">S2</td>
-                            <td class="cell-S2" data-label="Tue (9)">S2</td>
-                            <td class="cell-S2" data-label="Wed (10)">S2</td>
-                            <td class="cell-S2" data-label="Thu (11)">S2</td>
-                            <td class="cell-S2" data-label="Fri (12)">S2</td>
-                            <td class="cell-RDO" data-label="Sat (13)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (14)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Varshil</td>
-                            <td class="cell-S2" data-label="Mon (8)">S2</td>
-                            <td class="cell-S2" data-label="Tue (9)">S2</td>
-                            <td class="cell-S2" data-label="Wed (10)">S2</td>
-                            <td class="cell-RDO" data-label="Thu (11)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (12)">RDO</td>
-                            <td class="cell-S2" data-label="Sat (13)">S2</td>
-                            <td class="cell-S2" data-label="Sun (14)">S2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- WEEK 3 -->
-        <section class="week-section">
-            <div class="week-header">
-                <div class="week-title">Week 3 (June 15 – June 21)</div>
-                <div class="week-note">Rotation Swap: Alpesh & Varshil move back to S1.</div>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <th>Mon (15)</th>
-                            <th>Tue (16)</th>
-                            <th>Wed (17)</th>
-                            <th>Thu (18)</th>
-                            <th>Fri (19)</th>
-                            <th>Sat (20)</th>
-                            <th>Sun (21)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="person-name">Alpesh</td>
-                            <td class="cell-S1" data-label="Mon (15)">S1</td>
-                            <td class="cell-S1" data-label="Tue (16)">S1</td>
-                            <td class="cell-S1" data-label="Wed (17)">S1</td>
-                            <td class="cell-S1" data-label="Thu (18)">S1</td>
-                            <td class="cell-S1" data-label="Fri (19)">S1</td>
-                            <td class="cell-RDO" data-label="Sat (20)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (21)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Varshil</td>
-                            <td class="cell-S1" data-label="Mon (15)">S1</td>
-                            <td class="cell-S1" data-label="Tue (16)">S1</td>
-                            <td class="cell-S1" data-label="Wed (17)">S1</td>
-                            <td class="cell-RDO" data-label="Thu (18)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (19)">RDO</td>
-                            <td class="cell-S1" data-label="Sat (20)">S1</td>
-                            <td class="cell-S1" data-label="Sun (21)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Dhruv</td>
-                            <td class="cell-S2" data-label="Mon (15)">S2</td>
-                            <td class="cell-S2" data-label="Tue (16)">S2</td>
-                            <td class="cell-S2" data-label="Wed (17)">S2</td>
-                            <td class="cell-S2" data-label="Thu (18)">S2</td>
-                            <td class="cell-S2" data-label="Fri (19)">S2</td>
-                            <td class="cell-RDO" data-label="Sat (20)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (21)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Arpit</td>
-                            <td class="cell-S2" data-label="Mon (15)">S2</td>
-                            <td class="cell-S2" data-label="Tue (16)">S2</td>
-                            <td class="cell-S2" data-label="Wed (17)">S2</td>
-                            <td class="cell-RDO" data-label="Thu (18)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (19)">RDO</td>
-                            <td class="cell-S2" data-label="Sat (20)">S2</td>
-                            <td class="cell-S2" data-label="Sun (21)">S2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- WEEK 4 -->
-        <section class="week-section">
-            <div class="week-header">
-                <div class="week-title">Week 4 (June 22 – June 28)</div>
-                <div class="week-note">Rotation Swap: Dhruv & Arpit return to S1.</div>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <th>Mon (22)</th>
-                            <th>Tue (23)</th>
-                            <th>Wed (24)</th>
-                            <th>Thu (25)</th>
-                            <th>Fri (26)</th>
-                            <th>Sat (27)</th>
-                            <th>Sun (28)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="person-name">Dhruv</td>
-                            <td class="cell-S1" data-label="Mon (22)">S1</td>
-                            <td class="cell-S1" data-label="Tue (23)">S1</td>
-                            <td class="cell-S1" data-label="Wed (24)">S1</td>
-                            <td class="cell-S1" data-label="Thu (25)">S1</td>
-                            <td class="cell-S1" data-label="Fri (26)">S1</td>
-                            <td class="cell-RDO" data-label="Sat (27)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (28)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Arpit</td>
-                            <td class="cell-S1" data-label="Mon (22)">S1</td>
-                            <td class="cell-S1" data-label="Tue (23)">S1</td>
-                            <td class="cell-S1" data-label="Wed (24)">S1</td>
-                            <td class="cell-RDO" data-label="Thu (25)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (26)">RDO</td>
-                            <td class="cell-S1" data-label="Sat (27)">S1</td>
-                            <td class="cell-S1" data-label="Sun (28)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Alpesh</td>
-                            <td class="cell-S2" data-label="Mon (22)">S2</td>
-                            <td class="cell-S2" data-label="Tue (23)">S2</td>
-                            <td class="cell-S2" data-label="Wed (24)">S2</td>
-                            <td class="cell-S2" data-label="Thu (25)">S2</td>
-                            <td class="cell-S2" data-label="Fri (26)">S2</td>
-                            <td class="cell-RDO" data-label="Sat (27)">RDO</td>
-                            <td class="cell-RDO" data-label="Sun (28)">RDO</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Varshil</td>
-                            <td class="cell-S2" data-label="Mon (22)">S2</td>
-                            <td class="cell-S2" data-label="Tue (23)">S2</td>
-                            <td class="cell-S2" data-label="Wed (24)">S2</td>
-                            <td class="cell-RDO" data-label="Thu (25)">RDO</td>
-                            <td class="cell-RDO" data-label="Fri (26)">RDO</td>
-                            <td class="cell-S2" data-label="Sat (27)">S2</td>
-                            <td class="cell-S2" data-label="Sun (28)">S2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- WEEK 5 -->
-        <section class="week-section">
-            <div class="week-header">
-                <div class="week-title">Week 5 (June 29 – June 30)</div>
-                <div class="week-note">End of Month: Continuing current rotation cycle dynamically.</div>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <th>Mon (29)</th>
-                            <th>Tue (30)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="person-name">Alpesh</td>
-                            <td class="cell-S1" data-label="Mon (29)">S1</td>
-                            <td class="cell-S1" data-label="Tue (30)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Varshil</td>
-                            <td class="cell-S1" data-label="Mon (29)">S1</td>
-                            <td class="cell-S1" data-label="Tue (30)">S1</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Dhruv</td>
-                            <td class="cell-S2" data-label="Mon (29)">S2</td>
-                            <td class="cell-S2" data-label="Tue (30)">S2</td>
-                        </tr>
-                        <tr>
-                            <td class="person-name">Arpit</td>
-                            <td class="cell-S2" data-label="Mon (29)">S2</td>
-                            <td class="cell-S2" data-label="Tue (30)">S2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <blockquote>
-            <strong>Why this works:</strong> Everyone works exactly 5 days a week, your shifts swap cleanly every Monday morning, and by staggering the RDO pairs (one pair off Thu/Fri, the other off Sat/Sun), your operation keeps running 7 days a week without a single day going dark.
-        </blockquote>
+<div class="container">
+    <h1>ISG Support L1 Shift Roster</h1>
+    <h2>Transition Phase: July 24, 2026 – August 31, 2026</h2>
+    
+    <!-- JULY TRANSITION TABLE -->
+    <h3>Late July Roster (July 24 – July 31)</h3>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th class="name-col">Date & Month</th>
+                    <th>24-Jul</th>
+                    <th class="weekend-hdr">25-Jul</th>
+                    <th class="weekend-hdr">26-Jul</th>
+                    <th>27-Jul</th>
+                    <th>28-Jul</th>
+                    <th>29-Jul</th>
+                    <th>30-Jul</th>
+                    <th>31-Jul</th>
+                </tr>
+                <tr>
+                    <th class="name-col">Day</th>
+                    <th>Fri</th>
+                    <th class="weekend-hdr">Sat</th>
+                    <th class="weekend-hdr">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name-col">Rohan S</td>
+                    <td class="shift-s3">S3</td>
+                    <td class="shift-s3">S3</td>
+                    <td class="shift-s3">S3</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Aakash R</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-s">S</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s">S</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Alpesh M</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Dhruv P</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Arpit K</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s1">S1</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Varshil K</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-s2">S2</td>
+                    <td class="shift-rdo">RDO</td>
+                    <td class="shift-rdo">RDO</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <!-- Export Logic Scripts -->
-    <script>
-        function exportToExcel() {
-            let csv = 'Roster Week,Person,Mon,Tue,Wed,Thu,Fri,Sat,Sun\n';
-            
-            const sections = document.querySelectorAll('.week-section');
-            sections.forEach(section => {
-                const weekTitle = section.querySelector('.week-title').innerText.replace(/,/g, '');
-                const rows = section.querySelectorAll('tbody tr');
-                
-                rows.forEach(row => {
-                    const name = row.querySelector('.person-name').innerText;
-                    const cells = row.querySelectorAll('td:not(.person-name)');
-                    let rowData = [weekTitle, name];
-                    
-                    cells.forEach(cell => {
-                        rowData.push(cell.innerText);
-                    });
-                    
-                    while(rowData.length < 9) {
-                        rowData.push('');
-                    }
-                    
-                    csv += rowData.join(',') + '\n';
-                });
-            });
+    <!-- AUGUST FULL TABLE -->
+    <h3>Full August Roster (August 1 – August 31)</h3>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th class="name-col">Date & Month</th>
+                    <th class="weekend-hdr">1-Aug</th><th class="weekend-hdr">2-Aug</th><th>3-Aug</th><th>4-Aug</th><th>5-Aug</th><th>6-Aug</th><th>7-Aug</th><th class="weekend-hdr">8-Aug</th><th class="weekend-hdr">9-Aug</th><th>10-Aug</th><th>11-Aug</th><th>12-Aug</th><th>13-Aug</th><th>14-Aug</th><th class="weekend-hdr">15-Aug</th><th class="weekend-hdr">16-Aug</th><th>17-Aug</th><th>18-Aug</th><th>19-Aug</th><th>20-Aug</th><th>21-Aug</th><th class="weekend-hdr">22-Aug</th><th class="weekend-hdr">23-Aug</th><th>24-Aug</th><th>25-Aug</th><th>26-Aug</th><th>27-Aug</th><th>28-Aug</th><th class="weekend-hdr">29-Aug</th><th class="weekend-hdr">30-Aug</th><th>31-Aug</th>
+                </tr>
+                <tr>
+                    <th class="name-col">Day</th>
+                    <th class="weekend-hdr">Sat</th><th class="weekend-hdr">Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="weekend-hdr">Sat</th><th class="weekend-hdr">Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="weekend-hdr">Sat</th><th class="weekend-hdr">Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="weekend-hdr">Sat</th><th class="weekend-hdr">Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="weekend-hdr">Sat</th><th class="weekend-hdr">Sun</th><th>Mon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name-col">Rohan S</td>
+                    <td class="shift-s3">S3</td><td class="shift-s3">S3</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Aakash R</td>
+                    <td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td><td class="shift-s">S</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Alpesh M</td>
+                    <td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Dhruv P</td>
+                    <td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-s2">S2</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s2">S2</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Arpit K</td>
+                    <td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td>
+                </tr>
+                <tr>
+                    <td class="name-col">Varshil K</td>
+                    <td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-rdo">RDO</td><td class="shift-rdo">RDO</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td><td class="shift-s1">S1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            const url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", "June_2026_Shift_Roster.csv");
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
+    <!-- TIMINGS & INFO LEGEND -->
+    <div class="legend-grid">
+        <div class="legend-card">
+            <div class="legend-title">Shift Timings Reference</div>
+            <div class="legend-item"><div class="legend-box shift-s">S</div> Shift 0 &bull; IST: 04:00 AM to 01:00 PM (EST: 06:30 PM to 03:30 AM)</div>
+            <div class="legend-item"><div class="legend-box shift-s1">S1</div> Shift 1 &bull; IST: 08:30 AM to 05:30 PM (EST: 10:00 PM to 08:00 AM)</div>
+            <div class="legend-item"><div class="legend-box shift-s2">S2</div> Shift 2 &bull; IST: 12:00 PM to 09:00 PM (EST: 01:30 AM to 10:30 AM)</div>
+            <div class="legend-item"><div class="legend-box shift-s3">S3</div> Shift 3 &bull; IST: 08:00 PM to 05:00 AM (EST: 09:30 AM to 06:30 PM)</div>
+            <div class="legend-item"><div class="legend-box shift-rdo">RDO</div> Regular Day Off</div>
+        </div>
+        
+        <div class="legend-card">
+            <div class="legend-title">Roster Rules Summary</div>
+            <p style="font-size: 12px; line-height: 1.5; margin: 0;">
+                1. <strong>Rohan & Aakash Swap:</strong> Complete pattern exchange implemented.<br>
+                2. <strong>Alpesh & Dhruv:</strong> Maintained RDO schedule but switched operational shift code to <strong>S2</strong> as of August 1st.<br>
+                3. <strong>Arpit & Varshil:</strong> Maintained RDO schedule but switched operational shift code to <strong>S1</strong> as of August 1st.
+            </p>
+        </div>
+    </div>
+</div>
 
-        function exportToPDF() {
-            window.print();
-        }
-    </script>
 </body>
 </html>
+
